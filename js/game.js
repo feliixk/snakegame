@@ -7,6 +7,7 @@ let gameOver = false
 let name = '';
 const gameBoard = document.getElementById('game-board')
 
+//highscore constants
 const NUMBER_OF_HIGHSCORES = 5;
 const HIGH_SCORES = 'highscores'
 const highScoreString = localStorage.getItem(HIGH_SCORES)
@@ -16,10 +17,10 @@ const highScores = JSON.parse(highScoreString) ?? []
 const lowestScore = highScores[NUMBER_OF_HIGHSCORES -1 ]?.score ?? 0
 
 
+//main game loop
 function main(currentTime){
 
     if (gameOver){
-
         gameOverScreen()
         return
     }
@@ -34,7 +35,7 @@ function main(currentTime){
     draw()
 }
 
-
+//displays 'game over' screen
 function gameOverScreen() {
     document.getElementById("game-over").style.display = "table";
     document.getElementById("score-gameover").innerHTML = "Score: " + getScore() + " points"
@@ -53,6 +54,7 @@ function gameOverScreen() {
     })
   }
 
+//update function to check for all different cases
 function update(){
     checkDeath()
     updateSnake()
@@ -60,6 +62,7 @@ function update(){
     displayScore()
 }
 
+// draw snake and food each update
 function draw(){
     gameBoard.innerHTML = ''
     drawSnake(gameBoard)
@@ -91,6 +94,7 @@ function submitHighScore(score, highScores){
     localStorage.setItem(HIGH_SCORES, JSON.stringify(highScores))
 }
 
+//function to get highscores and displaying
 function showHighScores() {
     const highScores = JSON.parse(localStorage.getItem(HIGH_SCORES)) ?? [];
     const highScoreList = document.getElementById("highScore-list");
