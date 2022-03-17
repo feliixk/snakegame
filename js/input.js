@@ -2,6 +2,7 @@ let inputDirection = {x:0, y:0}
 let lastInputDirection = {x:0, y:0}
 
 //Basic event listener for controlling snake via arrow keys
+//and not allowing 180 degree turns, e.g when snake is going right we cannot turn left directly etc.
 
 window.addEventListener('keydown', e =>{
 
