@@ -15,15 +15,14 @@
     <div id="game-board"></div>
     <div id="game-over">You lost</br>
         <p id="score-gameover"></p> 
-        <form><input type="text" id="fname" placeholder="enter your name" name="fname"><br>
-            <button onclick="submitHighScore()" type="button" id="btnSubmit">Submit score</button>
+        <form><input type="text" placeholder="enter your name" name="fname"><br>
+            <button type="button" class="btnSubmitScore">Submit score</button>
         </form>
-        <p><button type="button" id="btnRestart">restart</button></p>
+        <p><button onclick="window.location='/'" type="button" id="btnRestart">restart</button></p>
     </div>
 </div>
 
         <div id="score-board"><p id ="score">Score: </p></div>
     
-
 </body>
 </html>
