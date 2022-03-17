@@ -37,6 +37,8 @@ function main(currentTime){
 
 function gameOverScreen() {
     document.getElementById("game-over").style.display = "table";
+    document.getElementById("score-gameover").innerHTML = "Score: " + getScore() + " points"
+    showHighScores()
 
     document.querySelector(".btnSubmitScore").addEventListener('click', async (event) => {
         event.preventDefault()
@@ -91,10 +93,11 @@ function submitHighScore(score, highScores){
 
 function showHighScores() {
     const highScores = JSON.parse(localStorage.getItem(HIGH_SCORES)) ?? [];
-    const highScoreList = document.getElementById("game-over");
+    const highScoreList = document.getElementById("highScore-list");
+    highScoreList.innerHTML = "";
     
     highScoreList.innerHTML += "<h2>Highscores</h2>" + highScores
-      .map((score) => `<li>${score.score} pts  -  ${score.name}`)
+      .map((score) => `<li>${score.score} pts  -&ensp;  ${score.name}`)
       .join('');
   }
 

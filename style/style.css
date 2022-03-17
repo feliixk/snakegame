@@ -39,6 +39,20 @@ h1 {
   margin-right: auto;
   text-align: center;
   padding: 10px;
+
+  border: 0.25vmin solid black;
+  border-radius: 2vmin;
+}
+
+button {
+  background-color: #a5a5a5;
+  margin: 10px;
+  color: rgb(0, 0, 0);
+  padding: 15px 32px;
+}
+
+button:disabled {
+  color: rgb(131, 131, 131);
 }
 
 .snake {
