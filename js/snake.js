@@ -4,7 +4,7 @@ export const SNAKE_SPEED = 10
 const snakeBody = [{x:11, y:11}]
 let newSegments = 0
 
-
+//main updated method to move snake
 export function update(){
     addSegments()
     
@@ -33,6 +33,8 @@ export function expandSnake(amount){
     newSegments+= amount
 
 }
+
+//function to check if snake has been touched
 export function onSnake(position, { ignoreHead = false } = {}) {
     return snakeBody.some((segment, index) => {
       if (ignoreHead && index === 0) return false
@@ -44,7 +46,8 @@ function equalPositions(pos1, pos2) {
     return pos1.x === pos2.x && pos1.y === pos2.y
   }
 
-  function addSegments() {
+//add length to snake
+function addSegments() {
     for (let i = 0; i < newSegments; i++) {
       snakeBody.push({ ...snakeBody[snakeBody.length - 1] })
     }
@@ -56,6 +59,7 @@ export function getSnakeHead(){
     return snakeBody[0]
 }
 
+//Returns if snake has intersected something
 export function snakeIntersection() {
   return onSnake(snakeBody[0], { ignoreHead: true })
 }
