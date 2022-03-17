@@ -49,3 +49,8 @@ h1 {
   background-color: rgb(72, 255, 0);
   border: 0.25vmin solid black;
 }
+
+.foodApple {
+  background-image: url("../images/apple.jpg");
+  background-size: contain;
+}
