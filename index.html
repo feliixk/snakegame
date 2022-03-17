@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+    <script src="./js/game.js" defer type="module"></script>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <h1>SNAKE V1.0</h1>
+    <div id="game-board"></div>
+    <div id="game-over">You lost</br>
+        <p id="score-gameover"></p> 
+        <form><input type="text" id="fname" placeholder="enter your name" name="fname"><br>
+            <button onclick="submitHighScore()" type="button" id="btnSubmit">Submit score</button>
+        </form>
+        <p><button type="button" id="btnRestart">restart</button></p>
+    </div>
+</div>
+
+        <div id="score-board"><p id ="score">Score: </p></div>
+    
+
+</body>
+</html>
