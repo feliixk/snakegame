@@ -3,11 +3,17 @@ import {update as updateFood, draw as drawFood, getScore as getScore} from './fo
 import {outsideGrid} from './grid.js'
 
 let lastRenderTime = 0
+let gameOver = false
 const gameBoard = document.getElementById('game-board')
 
 document.getElementById ("btnRestart").addEventListener ("click", restarter, false);
 
 function main(currentTime){
+
+    if (gameOver){
+        gameOverScreen()
+        return
+    }
 
     window.requestAnimationFrame(main)
     const secondsSinceLastRender = (currentTime - lastRenderTime)/1000
@@ -19,10 +25,16 @@ function main(currentTime){
     draw()
 }
 
+
+function gameOverScreen() {
+    document.getElementById("game-over").style.display = "table";
+  }
+
 window.requestAnimationFrame(main)
 
 
 function update(){
+    checkDeath()
     updateSnake()
     updateFood()
     displayScore()
@@ -32,6 +44,10 @@ function draw(){
     gameBoard.innerHTML = ''
     drawSnake(gameBoard)
     drawFood(gameBoard)
+}
+
+function checkDeath(){
+    gameOver = outsideGrid(getSnakeHead()) || snakeIntersection()
 }
 
 function displayScore(){
