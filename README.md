@@ -1,6 +1,8 @@
 # snakegame
 
-Snake game assignment for the course DA377C
+Snake game assignment for the course DA377C.
+
+Vanilla JS, HTML & CSS.
 
 Start game by pressing any of the arrow keys (up, down, right , left)
 
